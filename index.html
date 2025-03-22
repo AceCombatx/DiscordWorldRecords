@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord World Records (DWS)</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #7289DA, #23272A);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.3s;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            color: #7289DA;
+            text-shadow: 0px 0px 10px #7289DA;
+        }
+        .hero {
+            padding: 100px 20px;
+            background: url('logo.png') no-repeat center;
+            background-size: cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .join-btn {
+            background: #5865F2;
+            padding: 15px 30px;
+            color: white;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.3s;
+            box-shadow: 0px 0px 10px #5865F2;
+        }
+        .join-btn:hover {
+            background: #4752C4;
+            box-shadow: 0px 0px 20px #4752C4;
+        }
+        section {
+            padding: 60px 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-in-out;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .record-list, .leaderboard-list {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+        .record-item, .leaderboard-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        .faq {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .faq-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .faq-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let sections = document.querySelectorAll("section");
+            let observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#records">Records</a></li>
+                <li><a href="#leaderboard">Leaderboard</a></li>
+                <li><a href="#submit">Submit</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Tracking the Impossible. Setting the Unbreakable.</h1>
+            <a href="https://discord.gg/PhYMSF923j" class="join-btn">Join Now</a>
+        </div>
+    </header>
+    <section id="records">
+        <h2>Records Overview</h2>
+        <div class="record-list">
+            <div class="record-item">Fastest Discord Server Growth - 10,000 members in 24 hours</div>
+            <div class="record-item">Most Messages Sent in an Hour - 50,000 messages</div>
+            <div class="record-item">Highest Level on a Discord Bot - Level 500</div>
+        </div>
+    </section>
+    <section id="leaderboard">
+        <h2>Leaderboard</h2>
+        <div class="leaderboard-list">
+            <div class="leaderboard-item">1. User123 - 5 Records</div>
+            <div class="leaderboard-item">2. GamerPro - 4 Records</div>
+            <div class="leaderboard-item">3. SpeedRunnerX - 3 Records</div>
+        </div>
+    </section>
+    <section id="submit">
+        <h2>Submit a Record</h2>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeinmShbW4JuqwSunFyfQX1KuPDG4tZfCWIoYrPG_6WBm3RKg/viewform?embedded=true"
+                width="640" height="642" frameborder="0" marginheight="0" marginwidth="0">
+            Loading…
+        </iframe>
+    </section>
+    <section id="community">
+        <h2>Join the Community</h2>
+        <iframe src="https://discord.com/widget?id=1352716738156036106&theme=dark"
+                width="350" height="500" allowtransparency="true" frameborder="0"
+                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+        </iframe>
+    </section>
+    <section id="faq" class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">Q: How do I submit a record? <br> A: Use the submission form above!</div>
+        <div class="faq-item">Q: How do I join the leaderboard? <br> A: Get your record verified by our team.</div>
+        <div class="faq-item">Q: Are there any rewards? <br> A: Yes! Top record holders receive special roles and perks.</div>
+        <div class="faq-item">Q: How do I challenge an existing record? <br> A: Submit proof of a new record, and our team will verify.</div>
+    </section>
+    <footer>
+        <p>Powered by Discord World Records | <a href="https://discord.gg/PhYMSF923j" target="_blank">Join our Discord</a></p>
+    </footer>
+</body>
+</html>
